@@ -1,0 +1,24 @@
+version: '3'
+
+#VOLUMES
+# volumes:
+#   my-dir:
+#     dirver
+
+#NETWORK
+networks:
+  web-net:
+    external: true
+
+#SERVICES
+services:
+  qlyc-admin:
+    hostname: qlyc-admin
+    container_name: qlyc-admin
+    image: huynhcuongem75/qlyc-admin:v1.2
+    build: .
+    restart: always
+    networks:
+      - web-net
+    ports:
+      - 1011:80
