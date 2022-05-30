@@ -36,7 +36,8 @@ File: scss
 /*Top bar
 *******************/
 .topbar {
-  background: #144069;
+  /* background: #144069; */
+  background: #c9a96a;
 }
 
 .topbar .navbar-header {

@@ -20,7 +20,7 @@
           <div class="col-12 form-group text-right">
             <div class="col-12 form-group text-right">
               <button class="btn btn-info mr-1" (click)="modalChild.showChildModal(null)"
-                *rbacAllow="{Action:'CREATE',Code:'ROLE'}">
+               >
                 <span class="btn-label"> <i class="fa fa-plus"></i></span> Thêm mới
               </button>
               <button class="btn btn-secondary mr-1" (click)="reloadGrid()">
@@ -45,32 +45,23 @@
                   ></dxo-pager>
                 <!-- End option grid -->
                 <!-- Colume grid -->
-                <dxi-column dataField="Name" caption="Tên vai trò"></dxi-column>
-                <dxi-column dataField="Description" caption="Mô tả"></dxi-column>
-                <dxi-column dataField="CreateDate" caption="Ngày tạo" dataType="date" format="dd/MM/yyyy HH:mm">
+                <dxi-column dataField="name" caption="Tên vai trò"></dxi-column>
+                <dxi-column dataField="description" caption="Mô tả"></dxi-column>
+                <dxi-column dataField="createDate" caption="Ngày tạo" dataType="date" format="dd/MM/yyyy HH:mm">
                 </dxi-column>
-                <dxi-column dataField="CreateBy" caption="Người tạo">
-                  <dxo-lookup [dataSource]="dataSourUser" displayExpr="Name" valueExpr="Id" allowClearing="true">
-                  </dxo-lookup>
-                </dxi-column>
-                <dxi-column dataField="ModifyDate" caption="Ngày cập nhật" dataType="date" format="dd/MM/yyyy HH:mm">
-                </dxi-column>
-                <dxi-column dataField="ModifyBy" caption="Người cập nhật">
-                  <dxo-lookup [dataSource]="dataSourUser" displayExpr="Name" valueExpr="Id" allowClearing="true">
-                  </dxo-lookup>
-                </dxi-column>
+                
                 <dxi-column dataField="null" caption="Sửa/Xóa" type="buttons">
                   <dxi-button
-                    *rbacAllowArr="[{Action: 'UPDATE', Code:'ROLE', Operator:'OR'}, {Action: 'READ', Code:'ROLE', Operator:''}]"
+                    
                     hint="Chỉnh sửa" icon="edit" [visible]="1" [onClick]="showModal"></dxi-button>
-                  <dxi-button *rbacAllow="{Action:'DELETE',Code:'ROLE'}" icon="trash" [visible]="1"
+                  <dxi-button  icon="trash" [visible]="1"
                     [onClick]="fnDelete"></dxi-button>
                 </dxi-column>
-                <dxi-column dataField="Name" alignment="center" caption="Phân quyền" cellTemplate="permissionTemplate">
+                <!-- <dxi-column dataField="Name" alignment="center" caption="Phân quyền" cellTemplate="permissionTemplate">
                 </dxi-column>
                 <div *dxTemplate="let data of 'permissionTemplate'">
                   <div class="text-center"
-                    *rbacAllowArr="[{Action: 'UPDATE', Code:'ROLE', Operator:'OR'}, {Action: 'READ', Code:'ROLE', Operator:''}]">
+                   >
                     <button
                       *ngIf="data.value !=  roleConst.ADMIN && data.value != roleConst.APPROVER_ISSUE && data.value != roleConst.APPROVER_CONTRACT"
                       class="btn btn-info waves-effect waves-light mr-1" style="height: 25px; padding: 0 10px;"
@@ -79,7 +70,7 @@
                     </button>
 
                   </div>
-                </div>
+                </div> -->
               </dx-data-grid>
             </div>
           </div>

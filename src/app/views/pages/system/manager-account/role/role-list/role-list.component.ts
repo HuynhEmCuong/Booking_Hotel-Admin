@@ -41,11 +41,12 @@ export class RoleListComponent implements OnInit {
     this.dataSource.reload();
   }
   showModal(e){
+    debugger
     this.modalChild.showChildModal(e.row.data);
   }
 
   fnDelete(e){
-    let id = e.row.data.Id;
+    let id = e.row.data.id;
     this.shareService.deleteRowGrid(id,this.roleSerice,()=>{
       this.dataSource.reload();
     })

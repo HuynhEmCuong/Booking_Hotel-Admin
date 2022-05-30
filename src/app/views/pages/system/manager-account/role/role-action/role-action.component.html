@@ -21,7 +21,7 @@
       <div class="modal-body">
         <dx-form #targetForm id="form" [(formData)]="entity" labelLocation="left" >
           <dxi-item itemType="group" [colCount]="2">
-            <dxi-item dataField="Name" [label]="{text: 'Tên vai trò'}"
+            <dxi-item dataField="name" [label]="{text: 'Tên vai trò'}"
             [editorOptions]="{ stylingMode :'outlined', placeholder: 'Tên vai trò'}" >
               <dxi-validation-rule type="required"   message="Bắt buộc nhập"></dxi-validation-rule>
               <dxi-validation-rule type="async"
@@ -29,7 +29,7 @@
               [validationCallback]="validateName">
             </dxi-validation-rule>
             </dxi-item>
-            <dxi-item dataField="Description" [label]="{text: 'Mô tả'}"
+            <dxi-item dataField="description" [label]="{text: 'Mô tả'}"
             [editorOptions]="{ stylingMode :'outlined', placeholder: 'Mô tả'}" >
             </dxi-item>
            </dxi-item>

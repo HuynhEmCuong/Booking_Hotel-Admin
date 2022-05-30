@@ -33,8 +33,8 @@ export class RoleActionComponent implements OnInit {
     }
 
   async ngOnInit() {
-    this.dataSourceStatus = this.statusDefineService.loadDataSourceLookupFilter(["Code","=","Role"]);
-    await this.dataSourceStatus.load();
+    // this.dataSourceStatus = this.statusDefineService.loadDataSourceLookupFilter(["Code","=","Role"]);
+    // await this.dataSourceStatus.load();
   }
 
   fnSave() {
