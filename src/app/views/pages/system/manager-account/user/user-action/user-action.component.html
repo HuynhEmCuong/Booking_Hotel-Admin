@@ -14,14 +14,14 @@
         <div class="modal-body">
           <dx-form #targetForm id="form" [(formData)]="entity" labelLocation="left">
             <dxi-item itemType="group" [colCount]="2">
-              <!-- <dxi-item dataField="Avatar" contentTemplate="itemTemplate">
+              <dxi-item dataField="Avatar" contentTemplate="itemTemplate">
                 <div *dxTemplate="let data of 'itemTemplate'">
                   <div>
                     <upload-crop pathFolder="fileuploads/User/Avatar" [urlImage]="entity.avatar"
                       (valueChange)="valueChangeImageCrop($event)"></upload-crop>
                   </div>
                 </div>
-              </dxi-item> -->
+              </dxi-item>
 
 
               <dxi-item dataField="userName" [label]="{text: 'Tên đăng nhập'}" [editorOptions]="{

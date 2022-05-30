@@ -2,10 +2,10 @@ import { Status } from "../../enums/status.enum";
 import { Article } from "./article";
 
 export class ArticleCategory {
-    id: number;
+    id: number ;
     name: string;
     position: number;
-    status: Status;
+    status: Status =Status.active;
     metaTile: string;
     metaKeyWord: string;
     metaDescription: string;

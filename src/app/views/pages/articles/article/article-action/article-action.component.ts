@@ -12,7 +12,6 @@ export class ArticleActionComponent implements OnInit {
   @ViewChild("childModal", { static: false }) childModal: ModalDirective;
   @ViewChild("targetForm", { static: true }) targetForm: DxFormComponent;
   isLoading:boolean;
-  entity:ArticleCategory = new ArticleCategory()
   constructor() { 
    
   }

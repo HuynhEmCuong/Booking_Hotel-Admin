@@ -89,23 +89,17 @@
                   </div>
                 </div>
                 <dxi-column
-                  dataField="userName"
-                  caption="Tên tài khoản"
-                ></dxi-column>
-                <dxi-column
                   dataField="name"
-                  caption="Tên người dùng"
+                  caption="Tên Danh Mục"
                 ></dxi-column>
                 <dxi-column
-                  dataField="phoneNumber"
-                  caption="Số điện thoại"
-                ></dxi-column>
-                <dxi-column
-                  dataField="email"
-                  caption="Email"
-                  dataType="date"
-                  format="dd/MM/yyyy"
-                ></dxi-column>
+                dataField="metaKeyWord"
+                caption="Từ Khóa"
+              ></dxi-column>
+              <dxi-column
+              dataField="metaDescription"
+              caption="Mô Tả Từ Khóa"
+            ></dxi-column>
                 <dxi-column
                   dataField="createDate"
                   caption="Ngày tạo"
@@ -135,5 +129,5 @@
     </div>
   </div>
 
-  <app-article-category-action></app-article-category-action>
+  <app-article-category-action  #modalChild (loadInit)="loadInit()"></app-article-category-action>
 </div>

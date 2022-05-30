@@ -12,7 +12,7 @@
       <form action="your-action" (submit)="fnSave()">
         <div class="modal-header">
           <h4 id="dialog-child-name" class="modal-title pull-left">
-            Thông tin người dùng
+            Thông tin loại bài viết
           </h4>
           <button
             type="button"
@@ -31,14 +31,46 @@
             labelLocation="left"
           >
             <dxi-item itemType="group" [colCount]="2">
-              <!-- <dxi-item dataField="Avatar" contentTemplate="itemTemplate">
-                <div *dxTemplate="let data of 'itemTemplate'">
-                  <div>
-                    <upload-crop pathFolder="fileuploads/User/Avatar" [urlImage]="entity.avatar"
-                      (valueChange)="valueChangeImageCrop($event)"></upload-crop>
-                  </div>
-                </div>
-              </dxi-item> -->
+              <dxi-item
+                dataField="name"
+                [label]="{ text: 'Tên loại bài viết' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Tên loại bài viết'
+                }"
+              >
+                <dxi-validation-rule
+                  type="required"
+                  message="Bắt buộc nhập"
+                ></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item
+                dataField="metaTitle"
+                [label]="{ text: 'Tên Từ Khóa' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Tên Từ Khóa'
+                }"
+              >
+              </dxi-item>
+              <dxi-item
+                dataField="metaKeyWord"
+                [label]="{ text: 'Từ Khóa' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Từ Khóa'
+                }"
+              >
+              </dxi-item>
+              <dxi-item
+              dataField="metaDescription"
+              [label]="{ text: 'Mô Tả Từ Khóa' }"
+              [editorOptions]="{
+                stylingMode: 'outlined',
+                placeholder: 'Mô Tả Từ Khóa'
+              }"
+            >
+            </dxi-item>
             </dxi-item>
           </dx-form>
         </div>
