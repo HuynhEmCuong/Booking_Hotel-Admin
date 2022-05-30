@@ -5,7 +5,6 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from 'src/app/core/guards/auth.guard';
 import { AuthorizationGuard } from 'src/app/core/guards/authorization.guard';
-import { TaskReportResolver } from 'src/app/core/resolvers/requestTaskReport.resolver';
 const routes: Routes = [{
     path: '',
     component: PagesComponent,
@@ -21,6 +20,11 @@ const routes: Routes = [{
             path: 'manager',
             loadChildren: () => import('./system/system.module')
             .then(m => m.SystemModule)
+        },
+        {
+            path: 'article',
+            loadChildren: () => import('./articles/article.module')
+            .then(m => m.ArticleModule)
         },
        
         { path: '', redirectTo: 'dashboard', pathMatch: 'full' },

@@ -123,9 +123,16 @@
 
 
 .notseen{
-  background: #f2f4f8 !important;
+  background: #1252d3 !important;
+  opacity: 0.8;
 }
 
 .pointer{
   cursor: pointer;
+}
+.name {
+  font-size: 18px;
+  font-family:  Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color:#c9a96a;
 }
