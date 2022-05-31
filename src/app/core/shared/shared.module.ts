@@ -39,7 +39,9 @@ export class MyClock extends TimeagoClock {
     UploadMultipleComponent,
     EditorFullComponent,
     SafeHtmlPipe,
-    TaskStatusPipe
+    TaskStatusPipe,
+    UploadCropComponent,
+
   ],
   imports: [
     CommonModule,
@@ -95,7 +97,8 @@ export class MyClock extends TimeagoClock {
     ContentLoaderModule,
     DxValidationSummaryModule,
     TaskStatusPipe,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    UploadCropComponent
   ],
   providers: [TimeagoIntl
   ]

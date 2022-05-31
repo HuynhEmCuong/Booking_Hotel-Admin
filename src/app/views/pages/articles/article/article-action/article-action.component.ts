@@ -65,4 +65,8 @@ export class ArticleActionComponent implements OnInit {
     }
     this.childModal.show();
   }
+
+  valueChangeImageCrop($event){
+    
+  }
 }

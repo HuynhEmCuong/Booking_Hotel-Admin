@@ -1,0 +1,42 @@
+.custom-dropzone {
+  margin-top: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 15px;
+  overflow-y: hidden;
+
+  .file-info {
+    margin: 0;
+  }
+  .btn{
+    background-color: #144069;
+    color: white;
+  }
+
+  .drop-preview {
+    min-height: 60px !important;
+    color: #495057;
+    padding: 0 !important;
+    font-size: 12px;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .custom-dropzone {
+    height: 90px;
+    .drop-preview {
+      height: 75px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .custom-dropzone {
+    height: 150px;
+    .drop-preview {
+      height: 85px !important;
+    }
+  }
+}

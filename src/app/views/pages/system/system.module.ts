@@ -27,7 +27,6 @@ import { SystemRoutingModule } from './system-routing.module';
     PaginationModule.forRoot()
   ],
   declarations: [
-    UploadCropComponent,
     SystemComponent,
     UserListComponent,
     UserActionComponent,

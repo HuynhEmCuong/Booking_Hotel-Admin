@@ -44,6 +44,7 @@
                   message="Bắt buộc nhập"
                 ></dxi-validation-rule>
               </dxi-item>
+
               <dxi-item
                 dataField="articleCateId"
                 editorType="dxSelectBox"
@@ -52,9 +53,9 @@
                   stylingMode: 'outlined',
                   placeholder: 'Tên  bài viết',
                   dataSource: artilceCates,
-                  displayExpr:'name',
-                  searchExpr:'name',
-                  valueExpr :'id'
+                  displayExpr: 'name',
+                  searchExpr: 'name',
+                  valueExpr: 'id'
                 }"
               >
                 <dxi-validation-rule
@@ -102,6 +103,17 @@
                 }"
               >
               </dxi-item>
+            </dxi-item>
+            <dxi-item
+              dataField="imagesUrl"
+              [label]="{ text: 'Danh sách hình' }"
+              contentTemplate="itemTemplate"
+            >
+              <div *dxTemplate="let data of 'itemTemplate'">
+                <div>
+                  <upload-multiple [options]="true"> </upload-multiple>
+                </div>
+              </div>
             </dxi-item>
           </dx-form>
         </div>

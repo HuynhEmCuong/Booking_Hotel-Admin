@@ -1,0 +1,19 @@
+<div class="custom-dropzone" #dropFile ngx-dropzone (change)="onSelect($event)" [maxFileSize]='5242880'>
+  <ngx-dropzone-label>
+    <div>
+      <p class="file-info">{{fileInfo}} </p>
+      <button class="btn ">Tải lên</button>
+    </div>
+  </ngx-dropzone-label>
+  <ngx-dropzone-preview class="drop-preview" *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+    <ngx-dropzone-label>
+      <div class="file-name">
+        {{ f.file.name }}
+      </div>
+    </ngx-dropzone-label>
+  </ngx-dropzone-preview>
+
+</div>
+<div class="progress m-t-30" *ngIf="processUpload>0">
+  <div class="progress-bar bg-warning active progress-bar-striped" [style.width.%]="processUpload" role="progressbar"> <span class="sr-only">{{processUpload}}%</span> </div>
+</div>

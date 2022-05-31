@@ -15,7 +15,6 @@ import { ArticleListComponent } from './article/article-list/article-list.compon
   imports: [
     CommonModule, 
     ArticleRoutingModule,
-    FormsModule,
     SharedModule,
     PaginationModule.forRoot()
    ],
@@ -25,6 +24,8 @@ import { ArticleListComponent } from './article/article-list/article-list.compon
     ArticleCategoryActionComponent,
     ArticleActionComponent,
     ArticleListComponent,
+ 
+
   ],
   providers: [],
 })
