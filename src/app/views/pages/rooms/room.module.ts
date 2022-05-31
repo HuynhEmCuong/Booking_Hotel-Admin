@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 import { SharedModule } from 'src/app/core/shared/shared.module';
@@ -13,7 +14,7 @@ import { RoomListComponent } from './room/room-list/room-list.component';
 
 @NgModule({
     imports: [
-        BrowserModule,
+        CommonModule,
         SharedModule,
         RoomRoutingModule
     ],
