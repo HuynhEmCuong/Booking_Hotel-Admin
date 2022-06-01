@@ -48,7 +48,7 @@
     <ngx-dropzone-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of filesCheck" [file]="f.File"
       [removable]="true" (removed)="onRemove(f)">
       <ngx-dropzone-label>
-        <p [title]="f.File.name" style="text-align: center;">{{f.File.name | compactFile}}</p>
+        <p [title]="f.File.name" style="text-align: center;color: black; font-size: 16px;">{{f.File.name | compactFile}}</p>
         <button type="button" class="btn btn-success" (click)="dowloadFile(f.File)">
           <i class="fa fa-cloud-download-alt"></i>
           Tải xuống

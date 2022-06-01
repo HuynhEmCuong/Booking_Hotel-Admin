@@ -8436,7 +8436,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
   color: black !important;
   font-size: 13px !important;
 }
-.dx-widget input, .dx-widget textarea{
+.dx-widget input{
   height: 35px !important;
   font-size: 14px !important;
 }

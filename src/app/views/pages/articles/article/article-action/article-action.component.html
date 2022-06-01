@@ -78,9 +78,11 @@
               </dxi-item>
               <dxi-item
                 dataField="content"
+                editorType="dxTextArea"
                 [label]="{ text: 'Nội dung' }"
                 [editorOptions]="{
                   stylingMode: 'outlined',
+                  height:'90',
                   placeholder: 'Nội dung'
                 }"
               >
@@ -111,7 +113,7 @@
             >
               <div *dxTemplate="let data of 'itemTemplate'">
                 <div>
-                  <upload-multiple [options]="true"> </upload-multiple>
+                  <upload-multiple #uploadFile [options]="optionFile"> </upload-multiple>
                 </div>
               </div>
             </dxi-item>
