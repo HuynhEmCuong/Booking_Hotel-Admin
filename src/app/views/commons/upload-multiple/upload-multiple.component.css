@@ -1,8 +1,26 @@
-.name-image{
+.name-image {
   text-align: center;
   background-color: #eee;
   opacity: 0.6;
   color: #000;
   border-radius: 5px;
   padding: 2px 5px;
+}
+
+
+.custom-dropzone {
+  padding: 10px;
+  color: #fff;
+  height: 250px !important;
+  border-radius: 5px;
+  font-size: 20px;
+  position: relative;
+overflow-y: auto !important;
+}
+
+.custom-dropzone button.upload {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9999999999;
 }
