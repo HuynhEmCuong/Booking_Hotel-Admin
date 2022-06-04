@@ -42,24 +42,35 @@ export class UploadMultipleComponent implements OnInit {
     this.processUpload = 0;
     if (this.filesInput?.length > 0) {
       this.filesInput.forEach(async (file) => {
-        if (file.File != null) {
+        if (file.fileData != null) {
+          const fileData = file.fileData;
           let blob = await this.fileService
-            .downloadFile(file.File.FileFullPath)
+            .downloadFile(fileData.fileFullPath)
             .toPromise()
             .then();
           let fileCheck = new FileCheck();
           fileCheck.IsNew = false;
-          fileCheck.FileLocalName = file.File.FileLocalName;
-          fileCheck.FileOriginalName = file.File.FileOriginalName;
-          fileCheck.File = blobToFile(blob, file.File.FileOriginalName);
+          fileCheck.FileLocalName = fileData.fileLocalName;
+          fileCheck.FileOriginalName = fileData.fileOriginalName;
+          fileCheck.File = blobToFile(blob, fileData.fileOriginalName);
           this.filesCheck.push(fileCheck);
         }
       });
     }
   }
 
-  //Truyền vào 1 mảng string lưu đường dẫn hình
 
+  //Truyền vào 1 mảng string lưu đường dẫn hình
+  loadInitFileWithUrls(filesInputs: string[] = []) {
+    filesInputs.forEach(async (urlFulPath) => {
+      if (urlFulPath) {
+        debugger
+        let blod = this.fileService.downloadFile(urlFulPath).toPromise().then();
+        // let fileChek = new FileCheck();
+        // fileChek.File = blobToFile();
+      }
+    });
+  }
 
   onSelect(event) {
     event.addedFiles.forEach((file) => {

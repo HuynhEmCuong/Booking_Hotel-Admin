@@ -34,7 +34,7 @@ export class ArticleActionComponent implements OnInit {
   optionFile: OptionFileUpload = {
     IsUploadImage: false,
     pathFile: 'FileUpload/Articles',
-    nameEntityId: '',
+    nameEntityId: 'ArticleId',
   };
 
   artilceCates: ArticleCategory[];
@@ -56,16 +56,8 @@ export class ArticleActionComponent implements OnInit {
     this.shareService.validateDxForm(validation, (isValid) => {
       if (isValid) {
         this.uploadFiles.uploadFiles((responFile) => {
-          
-          let urlAllFile :string ="";
-          if(responFile.length >0){
-            responFile.map(item =>{
-              urlAllFile= urlAllFile.concat(urlAllFile ?";":"",item.File.FileFullPath);
-            })
-            //Lưu tất cả đường dẫn ảnh vào 1 chuỗi cắt nhau bởi dấu ';'
-            this.entity.imagesUrl = urlAllFile;
-          }
-        
+       
+          this.entity.articleFile = responFile;
 
           this.isLoading = true;
           this.shareService.action(this.entity, this.article, () => {
@@ -79,9 +71,10 @@ export class ArticleActionComponent implements OnInit {
   }
 
   showChildModal(item) {
+    debugger
     if (item != null) {
       this.entity = cloneData(item);
-      this.uploadFiles.loadInitFile(this.entity.imagesUrl.split(';'));
+      this.uploadFiles.loadInitFile(this.entity.articleFile);
     } else {
       this.entity = new Article();
       let self = this;
@@ -91,6 +84,9 @@ export class ArticleActionComponent implements OnInit {
     }
     this.childModal.show();
   }
+
+  
+
 
   
 
