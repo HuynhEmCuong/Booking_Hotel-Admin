@@ -56,7 +56,6 @@ export class ArticleActionComponent implements OnInit {
     this.shareService.validateDxForm(validation, (isValid) => {
       if (isValid) {
         this.uploadFiles.uploadFiles((responFile) => {
-       
           this.entity.articleFile = responFile;
 
           this.isLoading = true;
@@ -71,7 +70,6 @@ export class ArticleActionComponent implements OnInit {
   }
 
   showChildModal(item) {
-    debugger
     if (item != null) {
       this.entity = cloneData(item);
       this.uploadFiles.loadInitFile(this.entity.articleFile);
@@ -84,11 +82,6 @@ export class ArticleActionComponent implements OnInit {
     }
     this.childModal.show();
   }
-
-  
-
-
-  
 
   valueChangeImageCrop($event) {}
 }

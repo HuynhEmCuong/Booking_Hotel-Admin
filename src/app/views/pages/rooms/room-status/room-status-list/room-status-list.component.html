@@ -22,7 +22,6 @@
               <button
                 class="btn btn-info mr-1"
                 (click)="modalChild.showChildModal(null)"
-                *rbacAllow="{ Action: 'CREATE', Code: 'USER' }"
               >
                 <span class="btn-label"> <i class="fa fa-plus"></i></span> Thêm
                 mới
@@ -71,33 +70,25 @@
                 >
                   ></dxo-pager
                 >
-                <!-- End option grid -->
-                <!-- Colume grid -->
-
-                <!-- <dxi-column dataField="Avatar" caption="Hình ảnh" cellTemplate="avatarTemplate"></dxi-column> -->
-                <div *dxTemplate="let data of 'avatarTemplate'">
-                  <div class="img-grid">
-                    <a
-                      data-fancybox="gallery"
-                      [href]="data.value | image: true"
-                    >
-                      <img
-                        class="img-reponsive"
-                        [src]="data.value | image: true"
-                      />
-                    </a>
-                  </div>
-                </div>
                 <dxi-column
                   dataField="name"
-                  caption="Loại bài viết"
+                  caption="Trạng thái phòng"
                 ></dxi-column>
                 <dxi-column
-                  dataField="name"
-                  caption="Tên Bài Viết"
+                  dataField="code"
+                  caption="Mã trạng thái phòng"
                 ></dxi-column>
-                <dxi-column dataField="title" caption="Tiêu đề"></dxi-column>
-                <dxi-column dataField="content" caption="Nội dung"></dxi-column>
+                <dxi-column
+                  dataField="description"
+                  caption="Mô tả"
+                ></dxi-column>
+                <dxi-column dataField="status" caption="Trạng thái">
+                  <dxo-lookup
+                    [dataSource]="dataSourceStatus"
+                    displayExpr="name"
+                    valueExpr="id"
+                  ></dxo-lookup>
+                </dxi-column>
                 <dxi-column
                   dataField="createDate"
                   caption="Ngày tạo"
@@ -126,4 +117,5 @@
       </div>
     </div>
   </div>
-
+  <app-room-status-action #modalChild (loadInit)="reloadGrid()"></app-room-status-action>
+</div>
