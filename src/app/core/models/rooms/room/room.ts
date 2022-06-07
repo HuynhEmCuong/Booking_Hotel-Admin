@@ -1,7 +1,7 @@
 import { Status } from "src/app/core/enums/status.enum";
 import { RoomStatus } from "../room-status/room-status";
 
-export class RoomViewModel {
+export class Room {
     id: number;
     name: string;
     code: string;

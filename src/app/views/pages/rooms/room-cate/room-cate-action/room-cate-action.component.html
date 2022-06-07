@@ -1,3 +1,205 @@
-<p>
-  room-cate-action works!
-</p>
+<div
+  bsModal
+  #childModal="bs-modal"
+  [config]="{ ignoreBackdropClick: true }"
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="dialog-child-name"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content animated fadeIn">
+      <form action="your-action" (submit)="fnSave()">
+        <div class="modal-header">
+          <h4 id="dialog-child-name" class="modal-title pull-left">
+            Thông tin loại phòng
+          </h4>
+          <button
+            type="button"
+            class="close pull-right"
+            aria-label="Close"
+            (click)="childModal.hide()"
+          >
+            <i class="dx-icon dx-icon-close"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <dx-form
+            #targetForm
+            id="form"
+            [(formData)]="entity"
+            labelLocation="left"
+          >
+            <dxi-item itemType="group" [colCount]="2">
+              <dxi-item
+                dataField="name"
+                [label]="{ text: 'Tên Phòng' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Tên Phòng'
+                }"
+              >
+                <dxi-validation-rule
+                  type="required"
+                  message="Bắt buộc nhập"
+                ></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item
+                dataField="name"
+                [label]="{ text: 'Mã phòng' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Mã phòng'
+                }"
+              >
+                <dxi-validation-rule
+                  type="required"
+                  message="Bắt buộc nhập"
+                ></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item
+                dataField="description"
+                editorType="dxTextArea"
+                [label]="{ text: 'Mô tả' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  height: '90',
+                  placeholder: 'Mô tả'
+                }"
+              >
+              </dxi-item>
+              <dxi-item
+                dataField="bedType"
+                [label]="{ text: 'Loại giường' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Loại giường'
+                }"
+              >
+              <dxi-validation-rule
+                  type="required"
+                  message="Bắt buộc nhập"
+                ></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item
+                dataField="children"
+                [label]="{ text: 'Trẻ Em' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Trẻ Em'
+                }"
+              >
+              <dxi-validation-rule
+                  type="required"
+                  message="Bắt buộc nhập"
+                ></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item
+              editorType="dxNumberBox"
+                dataField="person"
+                [label]="{ text: 'Số lượng Người Lớn' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Số lượng  Người Lớn'
+                }"
+              >
+              <dxi-validation-rule
+                  type="required"
+                  message="Bắt buộc nhập"
+                ></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item
+                dataField="price"
+                [label]="{ text: 'Giá' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Giá'
+                }"
+              >
+              <dxi-validation-rule
+                  type="required"
+                  message="Bắt buộc nhập"
+                ></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item
+                dataField="size"
+                [label]="{ text: 'Diện tích' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Diện tích'
+                }"
+              >
+              </dxi-item>
+              <dxi-item
+                dataField="metaTitle"
+                [label]="{ text: 'Tên Từ Khóa' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Tên Từ Khóa'
+                }"
+              >
+              </dxi-item>
+              <dxi-item
+                dataField="metaKeyWord"
+                [label]="{ text: 'Từ Khóa' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Từ Khóa'
+                }"
+              >
+              </dxi-item>
+              <dxi-item
+                dataField="metaDescription"
+                [label]="{ text: 'Mô Tả Từ Khóa' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  placeholder: 'Mô Tả Từ Khóa'
+                }"
+              >
+              </dxi-item>
+            </dxi-item>
+            <dxi-item
+              dataField="imagesUrl"
+              [label]="{ text: 'Danh sách hình' }"
+              contentTemplate="itemTemplate"
+            >
+              <div *dxTemplate="let data of 'itemTemplate'">
+                <div>
+                  <upload-multiple #uploadFile [options]="optionFile">
+                  </upload-multiple>
+                </div>
+              </div>
+            </dxi-item>
+          </dx-form>
+        </div>
+        <div class="modal-footer">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="text-right">
+                <div>
+                  <button
+                    class="btn btn-secondary waves-effect waves-light mr-1"
+                    type="button"
+                    (click)="childModal.hide()"
+                  >
+                    <span class="btn-label"><i class="fa fa-times"></i></span
+                    >Đóng
+                  </button>
+                  <button
+                    [ladda]="isLoading"
+                    class="btn btn-info waves-effect waves-light mr-1"
+                    type="button"
+                    (click)="fnSave()"
+                  >
+                    <span class="btn-label"><i class="fa fa-check"></i></span
+                    >Lưu
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
