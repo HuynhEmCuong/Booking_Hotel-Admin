@@ -3,6 +3,7 @@ import { DxFormComponent } from 'devextreme-angular';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { cloneData } from 'src/app/core/common/helper';
 import { RoomCategory } from 'src/app/core/models/rooms/room-cate/room-cate';
+import { RoomCateFile } from 'src/app/core/models/rooms/room-cate/room-cate-file';
 import { ShareService } from 'src/app/core/services/general/share.service';
 import { RoomCateService } from 'src/app/core/services/room/room-cate.service';
 import { OptionFileUpload, UploadMultipleComponent } from 'src/app/views/commons/upload-multiple/upload-multiple.component';
@@ -52,12 +53,12 @@ export class RoomCateActionComponent implements OnInit {
   }
 
   showChildModal(item) {
-    debugger
     if (item != null) {
       this.entity = cloneData(item);
       this.uploadFiles.loadInitFile(this.entity.roomCateFile);
     } else {
       this.entity = new RoomCategory();
+      this.entity.roomCateFile = new Array<RoomCateFile> ();
       let self = this;
       setTimeout(function () {
         self.targetForm.instance.resetValues();

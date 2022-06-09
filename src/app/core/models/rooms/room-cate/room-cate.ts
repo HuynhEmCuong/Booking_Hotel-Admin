@@ -2,7 +2,7 @@ import { Room } from "../room/room";
 import { RoomCateFile } from "./room-cate-file";
 
 export class RoomCategory {
-    id: number;
+    id: number =0;
     name: string;
     code: string;
     description: string;

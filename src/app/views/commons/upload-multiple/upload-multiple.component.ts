@@ -99,7 +99,8 @@ export class UploadMultipleComponent implements OnInit {
           .removeFile(event.FileLocalName)
           .toPromise()
           .then();
-        if (res.Success) {
+        if (res.success) {
+          debugger
           this.filesCheck = this.filesCheck.filter(
             (x) => x.FileLocalName != event.FileLocalName
           );

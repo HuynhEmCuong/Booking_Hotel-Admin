@@ -17,7 +17,7 @@ export class FileService {
     return this.http.post(`${API_URL}/File/UploadMultipleFile?pathFolder=${pathFile}`, formData, { reportProgress: true, observe: 'events' });
   }
   removeFile(fileLocalName) {
-    return this.http.delete(`${API_URL}/File/RemoveFile`, { params: { fileLocalName: fileLocalName } });
+    return this.http.delete(`${API_URL}/File/OnRemoveFile`, { params: { fileLocalName: fileLocalName } });
   }
 
   downloadFile(fileName) {
