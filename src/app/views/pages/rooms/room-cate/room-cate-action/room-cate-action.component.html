@@ -57,17 +57,7 @@
                   message="Bắt buộc nhập"
                 ></dxi-validation-rule>
               </dxi-item>
-              <dxi-item
-                dataField="description"
-                editorType="dxTextArea"
-                [label]="{ text: 'Mô tả' }"
-                [editorOptions]="{
-                  stylingMode: 'outlined',
-                  height: '90',
-                  placeholder: 'Mô tả'
-                }"
-              >
-              </dxi-item>
+
               <dxi-item
                 dataField="bedType"
                 [label]="{ text: 'Loại giường' }"
@@ -76,7 +66,7 @@
                   placeholder: 'Loại giường'
                 }"
               >
-              <dxi-validation-rule
+                <dxi-validation-rule
                   type="required"
                   message="Bắt buộc nhập"
                 ></dxi-validation-rule>
@@ -89,13 +79,13 @@
                   placeholder: 'Trẻ Em'
                 }"
               >
-              <dxi-validation-rule
+                <dxi-validation-rule
                   type="required"
                   message="Bắt buộc nhập"
                 ></dxi-validation-rule>
               </dxi-item>
               <dxi-item
-              editorType="dxNumberBox"
+                editorType="dxNumberBox"
                 dataField="person"
                 [label]="{ text: 'Số lượng Người Lớn' }"
                 [editorOptions]="{
@@ -103,7 +93,7 @@
                   placeholder: 'Số lượng  Người Lớn'
                 }"
               >
-              <dxi-validation-rule
+                <dxi-validation-rule
                   type="required"
                   message="Bắt buộc nhập"
                 ></dxi-validation-rule>
@@ -116,7 +106,7 @@
                   placeholder: 'Giá'
                 }"
               >
-              <dxi-validation-rule
+                <dxi-validation-rule
                   type="required"
                   message="Bắt buộc nhập"
                 ></dxi-validation-rule>
@@ -154,6 +144,18 @@
                 [editorOptions]="{
                   stylingMode: 'outlined',
                   placeholder: 'Mô Tả Từ Khóa'
+                }"
+              >
+              </dxi-item>
+              <dxi-item
+                dataField="description"
+                editorType="dxTextArea"
+                [colSpan]="2"
+                [label]="{ text: 'Mô tả' }"
+                [editorOptions]="{
+                  stylingMode: 'outlined',
+                  height: '90',
+                  placeholder: 'Mô tả'
                 }"
               >
               </dxi-item>
