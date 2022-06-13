@@ -844,6 +844,10 @@ html body .waves-notransition {
 .badge {
   font-weight: 400; }
 
+  .badge-xl {
+    font-size: 14px;
+  }
+
 .badge-xs {
   font-size: 9px; }
 
@@ -854,11 +858,11 @@ html body .waves-notransition {
   -o-transform: translate(0, -2px);
   transform: translate(0, -2px); }
 
-.badge-success {
+/* .badge-success {
   background-color: #d60000; }
 
 .badge-info {
-  background-color: #d60000; }
+  background-color: #d60000; } */
 
 .badge-primary {
   background-color: #7460ee; }
