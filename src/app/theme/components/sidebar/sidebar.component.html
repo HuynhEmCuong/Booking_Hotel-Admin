@@ -54,6 +54,28 @@
               routerLinkActive="active"
               aria-expanded="false"
             ></i>
+            Quản Lý Đặt Phòng
+          </a>
+
+          <ul aria-expanded="true" class="collapse">
+            <li>
+              <a
+                [routerLink]="['/pages/resevation/list']"
+                routerLinkActive="active"
+              >
+                <i class="fa fa-archway" aria-hidden="true"></i>   Phòng Đã Đặt</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a>
+            <i
+              class=" fa fa-hotel"
+              [routerLink]="['/pages/student/']"
+              routerLinkActive="active"
+              aria-expanded="false"
+            ></i>
             Quản Lý Phòng
           </a>
 
@@ -63,7 +85,7 @@
                 [routerLink]="['/pages/room/list-cate']"
                 routerLinkActive="active"
               >
-                <i class="fa fa-bars" aria-hidden="true"></i> Danh Sách Loại Phòng</a
+                <i class="fa fa-list" aria-hidden="true"></i> Danh Sách Loại Phòng</a
               >
             </li>
             <li>
@@ -71,7 +93,7 @@
                 [routerLink]="['/pages/room/list']"
                 routerLinkActive="active"
               >
-                <i class="fa fa-bars" aria-hidden="true"></i> Danh Sách Phòng</a
+                <i class="fa fa-list" aria-hidden="true"></i> Danh Sách Phòng</a
               >
             </li>
             <li>
@@ -79,7 +101,7 @@
                 [routerLink]="['/pages/room/list-status']"
                 routerLinkActive="active"
               >
-                <i class="fa fa-bars" aria-hidden="true"></i> Danh Sách Trạng Thái</a
+                <i class="fa fa-list" aria-hidden="true"></i> Danh Sách Trạng Thái</a
               >
             </li>
           </ul>

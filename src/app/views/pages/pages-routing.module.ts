@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from 'src/app/core/guards/auth.guard';
-import { AuthorizationGuard } from 'src/app/core/guards/authorization.guard';
 const routes: Routes = [{
     path: '',
     component: PagesComponent,
@@ -30,6 +29,12 @@ const routes: Routes = [{
             path: 'room',
             loadChildren: () => import('./rooms/room.module')
             .then(m => m.RoomModule)
+        },
+        {
+            path: 'resevation',
+            loadChildren: () => import('./reservation/resevation.module')
+            .then(m => m.ReservationModule)
+
         },
        
         { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
