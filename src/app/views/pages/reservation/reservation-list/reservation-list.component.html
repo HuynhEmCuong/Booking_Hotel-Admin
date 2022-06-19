@@ -1,3 +1,137 @@
-<p>
-  reservation-list works!
-</p>
+<div class="row page-titles">
+  <div class="col-md-5 col-8 align-self-center">
+    <h3 class="text-themecolor">Danh mục phòng đặt</h3>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a [routerLink]="['/pages/dashboard']">Trang chủ</a>
+      </li>
+      <li class="breadcrumb-item active">Danh sách phòng đã đặt</li>
+    </ol>
+  </div>
+  <div class="col-md-7"></div>
+</div>
+
+<div class="row">
+  <!-- Column -->
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 form-group text-right">
+            <!-- <button
+              class="btn btn-info mr-1"
+              (click)="modalChild.showChildModal(null)"
+            >
+              <span class="btn-label"> <i class="fa fa-plus"></i></span> Thêm
+              mới
+            </button> -->
+            <button class="btn btn-secondary mr-1" (click)="reloadGrid()">
+              <span class="btn-label"> <i class="fa fa-sync"></i></span> Làm mới
+            </button>
+          </div>
+          <div class="col-12">
+            <dx-data-grid
+              #dataGrid
+              [dataSource]="dataSource"
+              [errorRowEnabled]="false"
+              [remoteOperations]="true"
+              [showBorders]="true"
+              [showRowLines]="true"
+              [showColumnLines]="true"
+              class="m-grid-5"
+              [allowColumnResizing]="true"
+              noDataText="Không có dữ liệu !"
+              [focusedRowEnabled]="true"
+              columnResizingMode="widget"
+            >
+              <!-- Option grid -->
+              <dxo-selection mode="single"></dxo-selection>
+              <dxo-filter-row [visible]="true"></dxo-filter-row>
+              <dxo-editing
+                [allowUpdating]="true"
+                [allowDeleting]="true"
+                [useIcons]="true"
+              >
+                <dxo-texts
+                  confirmDeleteMessage=" Bạn có chắc chắn muốn xóa bản ghi này không?"
+                ></dxo-texts>
+              </dxo-editing>
+              <dxo-paging [pageSize]="10"></dxo-paging>
+              <dxo-pager
+                [showPageSizeSelector]="true"
+                [allowedPageSizes]="[5, 10, 25, 50, 100]"
+                [showPageSizeSelector]="true"
+                [showNavigationButtons]="true"
+                [showInfo]="true"
+                infoText="Trang #{0}. Tổng: {1} ({2} danh mục sản phẩm
+            )"
+              >
+                ></dxo-pager
+              >
+              <dxi-column
+                dataField="guest.fullName"
+                caption="Tên Khách hàng"
+              ></dxi-column>
+              <dxi-column
+                dataField="room.roomCategory.name"
+                caption="Loại Phòng"
+              ></dxi-column>
+              <dxi-column dataField="room.name" caption="Số phòng"></dxi-column>
+              <dxi-column
+                dataField="paymentType"
+                caption="Phương thức thanh toán"
+              >
+                <dxo-lookup
+                  [dataSource]="dataPaymentSource"
+                  displayExpr="name"
+                  valueExpr="id"
+                ></dxo-lookup>
+              </dxi-column>
+              <dxi-column
+                dataField="checkInDate"
+                caption="Giờ nhận phòng"
+                dataType="date"
+                format="dd/MM/yyyy HH:mm"
+              >
+              </dxi-column>
+              <dxi-column
+                dataField="checkOutDate"
+                caption="Giờ trả phòng"
+                dataType="date"
+                format="dd/MM/yyyy HH:mm"
+              >
+              </dxi-column>
+              <dxi-column
+                dataField="totalPrice"
+                caption="Tổng tiền"
+                format="#,##0 đồng"
+              >
+              </dxi-column>
+              <dxi-column
+                dataField="createDate"
+                caption="Ngày tạo"
+                dataType="date"
+                format="dd/MM/yyyy HH:mm"
+              >
+              </dxi-column>
+
+              <!-- <dxi-column type="buttons">
+                <dxi-button
+                  hint="Chỉnh sửa"
+                  icon="edit"
+                  [visible]="1"
+                  [onClick]="showModal"
+                ></dxi-button>
+                <dxi-button
+                  icon="trash"
+                  [visible]="1"
+                  [onClick]="fnDelete"
+                ></dxi-button>
+              </dxi-column> -->
+            </dx-data-grid>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

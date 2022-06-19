@@ -8445,6 +8445,8 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
   font-size: 14px !important;
 }
 
+
+
 .dx-texteditor.dx-editor-outlined .dx-texteditor-input{
   padding: 8px 15px !important;
 

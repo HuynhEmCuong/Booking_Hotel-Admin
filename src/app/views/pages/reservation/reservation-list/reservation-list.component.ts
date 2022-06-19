@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReservationService } from 'src/app/core/services/reservation/reservation.service';
 
 @Component({
   selector: 'app-reservation-list',
@@ -7,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationListComponent implements OnInit {
 
-  constructor() { }
+  dataSource:any;
+  dataPaymentSource:DataSourceTemplate[] = [
+    {
+      id:0,
+      name:"Paypal"
+    },
+    {
+      id:1,
+      name:"Visal"
+    },
+    {
+      id:2,
+      name:"Momo"
+    },
+  ]
+
+
+  constructor(private readonly _reservationService:ReservationService) { }
 
   ngOnInit() {
+    this.dataSource= this._reservationService.loadDataGrid();
   }
 
+  reloadGrid(){
+    this.dataSource.reload();
+  }
+
+}
+
+export class DataSourceTemplate {
+  id:number ;
+  name:string;
 }

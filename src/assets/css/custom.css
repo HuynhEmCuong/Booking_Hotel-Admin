@@ -52,9 +52,14 @@
   font-weight: 400;
 }
 
+.dx-header-row{
+  background-color: #f1f1f1;
+}
+
 .dx-header-row .dx-text-content-alignment-left, .dx-header-row .dx-text-content-alignment-right {
-  font-size: 15px !important;
+  font-size: 16px !important;
   font-weight: bold !important;
+  color: #000;
 }
 
 .img-grid{
