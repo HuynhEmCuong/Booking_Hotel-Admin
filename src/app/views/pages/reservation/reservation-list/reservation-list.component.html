@@ -18,13 +18,13 @@
       <div class="card-body">
         <div class="row">
           <div class="col-12 form-group text-right">
-            <!-- <button
+            <button
               class="btn btn-info mr-1"
               (click)="modalChild.showChildModal(null)"
             >
-              <span class="btn-label"> <i class="fa fa-plus"></i></span> Thêm
-              mới
-            </button> -->
+              <span class="btn-label"> <i class="fa fa-plus"></i></span> Đặt
+              phòng
+            </button>
             <button class="btn btn-secondary mr-1" (click)="reloadGrid()">
               <span class="btn-label"> <i class="fa fa-sync"></i></span> Làm mới
             </button>
@@ -63,8 +63,7 @@
                 [showPageSizeSelector]="true"
                 [showNavigationButtons]="true"
                 [showInfo]="true"
-                infoText="Trang #{0}. Tổng: {1} ({2} danh mục sản phẩm
-            )"
+                infoText="Trang #{0}. Tổng: {1} ({2} danh mục )"
               >
                 ></dxo-pager
               >
@@ -88,15 +87,15 @@
                 ></dxo-lookup>
               </dxi-column>
               <dxi-column
-              dataField="reservationStatus"
-              caption="Trạng thái thanh toán"
-            >
-              <dxo-lookup
-                [dataSource]="dataReservationType"
-                displayExpr="name"
-                valueExpr="id"
-              ></dxo-lookup>
-            </dxi-column>
+                dataField="reservationStatus"
+                caption="Trạng thái thanh toán"
+              >
+                <dxo-lookup
+                  [dataSource]="dataReservationType"
+                  displayExpr="name"
+                  valueExpr="id"
+                ></dxo-lookup>
+              </dxi-column>
               <dxi-column
                 dataField="checkInDate"
                 caption="Giờ nhận phòng"
@@ -144,4 +143,8 @@
       </div>
     </div>
   </div>
+  <app-reservation-action
+    #modalChild
+    (loadInit)="reloadGrid()"
+  ></app-reservation-action>
 </div>

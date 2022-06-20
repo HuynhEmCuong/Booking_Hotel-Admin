@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ReservationService } from 'src/app/core/services/reservation/reservation.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { ReservationService } from 'src/app/core/services/reservation/reservatio
   styleUrls: ['./reservation-list.component.scss']
 })
 export class ReservationListComponent implements OnInit {
-
+  @ViewChild("modalChild", { static: false }) modalChild;
   dataSource:any;
   dataPaymentSource:DataSourceTemplate[] = [
     {
@@ -48,6 +48,11 @@ export class ReservationListComponent implements OnInit {
   reloadGrid(){
     this.dataSource.reload();
   }
+
+  showModal(e){
+    this.modalChild.showChildModal(e.row.data);
+  }
+
 
 }
 

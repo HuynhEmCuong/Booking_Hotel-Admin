@@ -2,7 +2,7 @@ import { PaymentType, ReservationStatus } from "../../enums/resevation";
 import { Guest } from "../customer/customer";
 import { Room } from "../rooms/room/room";
 
-export interface Reservation {
+export class Reservation {
     id: number;
     guestId: number;
     roomId: number;
