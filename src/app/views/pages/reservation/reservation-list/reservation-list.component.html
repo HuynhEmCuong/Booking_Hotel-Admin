@@ -88,6 +88,16 @@
                 ></dxo-lookup>
               </dxi-column>
               <dxi-column
+              dataField="reservationStatus"
+              caption="Trạng thái thanh toán"
+            >
+              <dxo-lookup
+                [dataSource]="dataReservationType"
+                displayExpr="name"
+                valueExpr="id"
+              ></dxo-lookup>
+            </dxi-column>
+              <dxi-column
                 dataField="checkInDate"
                 caption="Giờ nhận phòng"
                 dataType="date"

@@ -22,7 +22,21 @@ export class ReservationListComponent implements OnInit {
       id:2,
       name:"Momo"
     },
-  ]
+  ];
+  dataReservationType : DataSourceTemplate[] = [
+    {
+    id:1,
+    name:"Đang thanh toán"
+  },
+  {
+    id:2,
+    name:"Đã thanh toán"
+  },
+  {
+    id:3,
+    name:"Hủy"
+  },
+]
 
 
   constructor(private readonly _reservationService:ReservationService) { }
